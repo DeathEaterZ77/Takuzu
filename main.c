@@ -10,6 +10,7 @@ int main() {
         case 1: {
             int size = menuA1();
             int option = menuA2();
+            printf("kk");
             switch(option){
                 case 1:{
                     break;
