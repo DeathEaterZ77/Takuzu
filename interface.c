@@ -29,7 +29,7 @@ int menuA2(){
     do{
     printf("How do you want to play ? \n"
            "\t1 - Enter a mask manually\n\t2 - Generate automatically a mask\n\t3 - Play\n\t4 - Return to menu\n");
-    scanf("%d",&option); getchar();} while(option!=1 && option!=2 && option!=3 && option!=4);
+    scanf("%d",&option);} while(option!=1 && option!=2 && option!=3 && option!=4);
     return option;
 }
 
@@ -43,7 +43,7 @@ void show_grid(int** grid,int size){
         printf("%c |",letter);
         letter+=1;
         for(j=0;j<size;j++){
-            if(grid[i][j]==-1)printf("   ");
+            if(grid[i][j]==-1)printf(" . |");
             else printf(" %d |",grid[i][j]);
         }
         printf("\n");
@@ -51,16 +51,5 @@ void show_grid(int** grid,int size){
 }
 
 
-
-
-void grid(int size,int** grid_game,int** mask,int** solution){
-    char letter='A';
-    for(int i=0; i<size; i++){
-
-        for(int j=0; j<size; j++){
-
-        }
-
-    }
 }
 

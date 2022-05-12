@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "interface.h"
-#include "game_player.h"
 #include "manual_solving.h"
 
 int main() {
@@ -9,15 +8,18 @@ int main() {
     switch(part){
         case 1: {
             int size = menuA1();
+            getchar();
             int option = menuA2();
             switch(option){
                 case 1:{
                     int** manual_mask = enter_mask(size);
+                    printf("Your entered mask :\n");
                     show_grid(manual_mask,size);
                     break;
                 }
                 case 2:{
                     int** auto_mask = generate_mask(size);
+                    printf("Your generated mask :\n");
                     show_grid(auto_mask,size);
                     break;
                 }

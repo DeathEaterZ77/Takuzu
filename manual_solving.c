@@ -20,17 +20,17 @@
 }
 
 int** init_matrix(int size){
-    int** mask = malloc(sizeof(int*)*size);
+    int** matrix = malloc(sizeof(int*)*size);
     for(int i=0; i<size; i++) {
-        mask[i] = malloc(sizeof(int) * size);
-        for(int j=0; j<size; j++){ mask[i][j] = 0;}
+        matrix[i] = malloc(sizeof(int) * size);
+        for(int j=0; j<size; j++){ matrix[i][j] = 0;}
     }
-    return mask;
+    return matrix;
 }
 
 int** generate_mask(int size){
     int** mask = init_matrix(size);
-    int nb_cases = (int)(size*size*0,5);
+    int nb_cases = (int)(size*size*0.5);
     srand(time(NULL));
     while (nb_cases != 0) {
         for(int i=0; i<size; i++){
@@ -43,4 +43,15 @@ int** generate_mask(int size){
         }
     }
     return mask;
+}
+
+int** apply_masktosolu(int** mask, int** solution, int size){
+    int** grid_game = init_matrix(size);
+    for(int i=0; i<size; i++){
+        for(int j=0; j<size; j++){
+            if (mask[i][j]==1){ grid_game[i][j] = solution[i][j]; }
+            else { grid_game[i][j] = -1;}
+        }
+    }
+    return grid_game;
 }

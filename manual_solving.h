@@ -8,5 +8,6 @@
 int** init_matrix(int size);
 int** enter_mask(int size);
 int** generate_mask(int size);
+int** apply_masktosolu(int size);
 
 #endif //TAKUZU_MANUAL_SOLVING_H
