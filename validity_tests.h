@@ -8,12 +8,13 @@ typedef struct{
 } CASE;
 
 
-
+int is_case_valid(int i, int j, int** grid, int size);
+int validity_move(int** grid_game, CASE coord_case, int size);
 int row_test(int** grid_game, int c, int size);
 int column_test(int** grid_game, int c, int size);
 int horizontal_seq_test(int** grid_game, int r, int c, int size);
 int vertical_seq_test(int** grid_game, int r, int c, int size);
-int validity_move(int** grid_game, CASE coord_case, int size);
+
 
 
 

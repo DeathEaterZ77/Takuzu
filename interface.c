@@ -35,6 +35,44 @@ int menuA2(){
 }
 
 
+int menuB1(){
+    int size;
+    do{
+        printf("-------------------- AUTO-SOLVE --------------------\n"
+               "Choose the size of the grid to solve:\n\t1 - 4x4\n\t2 - 8x8\n");
+        scanf("%d",&size); } while(size!=1 && size!=2);
+    switch(size){
+        case 1: size=4; break;
+        case 2: size=8; break;
+        default :{
+            printf("Automatically set to 4x4"); size=4; break;
+        }
+    }
+    return size;
+}
+
+
+int menuC1(){
+    int size;
+    do{
+        printf("-------------------- GENERATION --------------------\n"
+               "Choose the size of the grid :\n\t1 - 4x4\n\t2 - 8x8\n");
+        scanf("%d",&size); } while(size!=1 && size!=2);
+    switch(size){
+        case 1: size=4; break;
+        case 2: size=8; break;
+    }
+    return size;
+}
+int menuC2(){
+    int option;
+    do{
+        printf("What do you want to do ? \n\t1 - Show all lines possibilities\n\t2 - Generate automatically a grid (no still implemented)\n\t3- Return to menu\n");
+        scanf("%d",&option);}
+    while(option!=1 && option!=2 && option!=3);
+    return option;
+}
+
 void show_grid(int** grid,int size){
     int i,j;
     char letter='A';

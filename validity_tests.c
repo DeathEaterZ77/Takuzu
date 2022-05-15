@@ -56,3 +56,20 @@ int validity_move(int** grid_game, CASE coord_case, int size){
 
     return 0;
 }
+
+int is_case_valid(int i, int j, int** grid, int size){
+    int val;
+    val = row_test(grid, i, size);
+    if (val != -1) return (val + 1) % 2;
+
+    val = column_test(grid, j, size);
+    if (val != -1) return (val + 1) % 2;
+
+    val = horizontal_seq_test(grid,i, j, size);
+    if (val != -1) return (val + 1) % 2;
+
+    val = vertical_seq_test(grid, i, j, size);
+    if (val != -1) return (val + 1) % 2;
+
+    return -1;
+}
