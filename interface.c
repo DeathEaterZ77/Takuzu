@@ -37,13 +37,16 @@ void show_grid(int** grid,int size){
     int i,j;
     char letter='A';
     printf("\n  ");
-    for(j=0;j<size;j++) printf("| %d ",j);
+    for(j=0;j<size;j++) {
+        printf("| %d ",j);
+    }
     printf("|\n");
     for(i=0;i<size;i++){
+
         printf("%c |",letter);
         letter+=1;
         for(j=0;j<size;j++){
-            if(grid[i][j]==-1)printf(" . |");
+            if(grid[i][j]==-1) printf(" . |");
             else printf(" %d |",grid[i][j]);
         }
         printf("\n");

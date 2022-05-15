@@ -47,11 +47,11 @@ int** generate_mask(int size){
     return mask;
 }
 
-int** apply_masktosolu(int** mask, int** solution, int size){
+int** apply_masktosolu(int** mask, int** solu, int size){
     int** grid_game = init_matrix(size);
     for(int i=0; i<size; i++){
         for(int j=0; j<size; j++){
-            if (mask[i][j]==1){ grid_game[i][j] = solution[i][j]; }
+            if (mask[i][j]==1){ grid_game[i][j] = solu[i][j]; }
             else { grid_game[i][j] = -1;}
         }
     }
@@ -77,20 +77,54 @@ CASE get_case(int** grid_game, int size){
     return your_case;
 }
 
-void play(int** grid_game, int size){
+int verify_solution(int** grid_game, int** grid_solu, int size){
+    for(int i=0; i<size; i++){
+        for(int j=0; j<size; j++){
+            if ( grid_game[i][j] != grid_solu[i][j] ) return 0;
+        }
+    }
+    return 1;
+}
 
-    int life=3, win_game=0;
+void play(int** grid_game, int** grid_solu, int size){
+
+    int life=3, win_game=0, verif;
     CASE coord_case;
-    while(life!=0){
+    while(life!=0 && win_game==0){
 
         show_grid(grid_game, size);
         printf("\n==> %d lives left <==\n",life);
         coord_case = get_case(grid_game, size);
-
-
-
-
-        life--;
+        verif = validity_move(grid_game, coord_case, size);
+        if (verif==0){
+            if( coord_case.val == grid_solu[coord_case.x][coord_case.y] ){
+                grid_game[coord_case.x][coord_case.y] = coord_case.val;
+                printf("\nCorrect move !");
+                win_game = verify_solution(grid_game, grid_solu, size);
+            }
+            else{
+                printf("\nValid move but incorrect !");
+            }
+        }
+        else{
+            life--;
+            printf("\nInvalid move ! You lose one life, so you got %d left...\n", life);
+            switch(verif){
+                case 1: printf("There is already half the %d's row filled with %d !", coord_case.x, coord_case.val); break;
+                case 2: printf("There is already half the %d's column filled with %d !", coord_case.y, coord_case.val); break;
+                case 3: printf("You can't have a sequence of the 3 same values on the %d's row !", coord_case.x); break;
+                case 4: printf("You can't have a sequence of the 3 same values on the %d's column !", coord_case.x); break;
+            }
+        }
+        printf("\n");
+    }
+    if (life != 0){
+        printf("Congrats ! You won the game !");
+        show_grid(grid_game, size);
+    }
+    else{
+        printf("You lost all your lives...\nGAME OVER\n\nThe solution was :\n");
+        show_grid(grid_game, size);
     }
 
 }
