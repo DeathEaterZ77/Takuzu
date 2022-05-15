@@ -21,19 +21,18 @@ int main() {
                         printf("Your entered mask :\n");
                         show_grid(manual_mask, size);
                         int **tab_solu = get_tab(size);
+
                         int **grid_game = apply_masktosolu(manual_mask, tab_solu, size);
-                        show_grid(grid_game, size);
                         play(grid_game, tab_solu, size);
                         break;
                     }
                     case 2: {
+
                         int **auto_mask = generate_mask(size);
                         printf("Your generated mask :\n");
                         show_grid(auto_mask, size);
                         int **tab_solu = get_tab(size);
                         int **grid_game = apply_masktosolu(auto_mask, tab_solu, size);
-
-                        show_grid(grid_game, size);
                         play(grid_game, tab_solu, size);
                         break;
                     }
@@ -63,7 +62,7 @@ int main() {
                 int option = menuC2();
                 switch(option){
                     case 1: show_valid_row(size); break;
-                    case 2:printf("not implemented..."); break;
+                    case 2:printf("\tnot implemented...\n"); break;
                     case 3: break;
                     default: printf("You have to choose between 1 and 3..."); break;
                 }

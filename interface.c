@@ -67,7 +67,7 @@ int menuC1(){
 int menuC2(){
     int option;
     do{
-        printf("What do you want to do ? \n\t1 - Show all lines possibilities\n\t2 - Generate automatically a grid (no still implemented)\n\t3- Return to menu\n");
+        printf("What do you want to do ? \n\t1 - Show all lines possibilities\n\t2 - Generate automatically a grid (no still implemented)\n\t3 - Return to menu\n");
         scanf("%d",&option);}
     while(option!=1 && option!=2 && option!=3);
     return option;
