@@ -27,16 +27,16 @@ int column_test(int** grid_game, int c, int size){
 }
 
 int horizontal_seq_test(int** grid_game, int r, int c, int size){
-    if ((c > 1) && (grid_game[r][c-1]==grid_game[r][c-2])) return grid_game[r][c-1];
-    if ((c < size-2) && (grid_game[r][c+1]==grid_game[r][c+2])) return grid_game[r][c+1];
+    if ((c > 1) && (grid_game[r][c-1]==grid_game[r][c-2]) && grid_game[r][c - 1] != -1) return grid_game[r][c-1];
+    if ((c < size-2) && (grid_game[r][c+1]==grid_game[r][c+2])&& grid_game[c][r + 1] != -1) return grid_game[r][c+1];
     if ((c > 0) && (c<size-1) && (grid_game[r][c-1]==grid_game[r][c+1])) return grid_game[r][c-1];
     return -1;
 }
 
 int vertical_seq_test(int** grid_game, int r, int c, int size){
-    if ((r > 1) && (grid_game[r-1][c]==grid_game[r-2][c])) return grid_game[r-1][c];
-    if ((r < size-2) && (grid_game[r+1][c]==grid_game[r+2][c])) return grid_game[r+1][c];
-    if ((r > 0) && (c<size-1) && (grid_game[r-1][c]==grid_game[r+1][c])) return grid_game[r-1][c];
+    if ((r > 1) && (grid_game[r-1][c]==grid_game[r-2][c]) && grid_game[r - 1][c] != -1) return grid_game[r-1][c];
+    if ((r < size-2) && (grid_game[r+1][c]==grid_game[r+2][c]) && grid_game[r + 1][c] != -1) return grid_game[r+1][c];
+    if ((r > 0) && (r<size-1) && (grid_game[r-1][c]==grid_game[r+1][c])) return grid_game[r-1][c];
     return -1;
 }
 

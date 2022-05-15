@@ -4,6 +4,7 @@
 
 int menu(){
     int part;
+    setbuf(stdout, 0);
     printf("-------------------- TAKUZU'S GAME --------------------\n"
            "                         MENU                          \n"
            "Make a choice :\n\t1 - Play by solving a grid\n\t2 - Solve automatically a grid\n\t3 - Generate a grid\n\t4 - Exit\n");
@@ -32,6 +33,7 @@ int menuA2(){
     while(option!=1 && option!=2 && option!=3 && option!=4);
     return option;
 }
+
 
 void show_grid(int** grid,int size){
     int i,j;

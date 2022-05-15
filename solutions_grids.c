@@ -25,6 +25,5 @@ int** get_tab(int size){
             else if(size==8){ tab_solu[i][j] = static_solu8[i][j];}
         }
     }
+    return tab_solu;
 }
-
-int mask4x4 = {{1,0,0,0},{0,0,1,0},{1,0,1,1},{0,1,0,0}};
