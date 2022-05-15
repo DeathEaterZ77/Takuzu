@@ -27,9 +27,9 @@ int menuA1(){
 int menuA2(){
     int option;
     do{
-    printf("How do you want to play ? \n"
-           "\t1 - Enter a mask manually\n\t2 - Generate automatically a mask\n\t3 - Play\n\t4 - Return to menu\n");
-    scanf("%d",&option);} while(option!=1 && option!=2 && option!=3 && option!=4);
+    printf("How do you want to play ? \n\t1 - Enter a mask manually\n\t2 - Generate automatically a mask\n\t3 - Play\n\t4 - Return to menu\n");
+    scanf("%d",&option);}
+    while(option!=1 && option!=2 && option!=3 && option!=4);
     return option;
 }
 
@@ -51,5 +51,4 @@ void show_grid(int** grid,int size){
 }
 
 
-}
 
