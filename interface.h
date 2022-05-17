@@ -5,7 +5,6 @@ int menu();
 int menuA1();
 int menuA2();
 int menuB1();
-int menuB2();
 int menuC1();
 int menuC2();
 void show_grid(int** grid,int size);

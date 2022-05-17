@@ -50,7 +50,3 @@ void auto_solve(int **game_grid, int **solu_grid,int size){
     }
     printf("\nSolved grid ! \n");
 }
-
-void add_case_from_solu(int **game_grid, int **solu_grid, int size){
-
-}

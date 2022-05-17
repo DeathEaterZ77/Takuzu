@@ -124,7 +124,7 @@ void play(int** grid_game, int** grid_solu, int size){
     }
     else{
         printf("You lost all your lives...\nGAME OVER\n\nThe solution was :\n");
-        show_grid(grid_game, size);
+        show_grid(grid_solu, size);
     }
 
 }

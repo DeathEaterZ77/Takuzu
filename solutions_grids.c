@@ -1,7 +1,7 @@
 #include "solutions_grids.h"
 #include "stdio.h"
 #include "stdlib.h"
-
+#include "interface.h"
 
 int** get_tab(int size){
 
