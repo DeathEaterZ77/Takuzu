@@ -10,3 +10,5 @@ List of files that are used :
 - interface.c / .h
 - validity_tests.c / .h
 - solution_grids.c / .h
+- auto_solving.c / .h
+- grid_generation.c /.h
